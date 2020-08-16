@@ -9,14 +9,14 @@ import (
 	"strconv"
 	"time"
 
-	"./signal"
+	"github.com/fireflyhoo/live-spirit/signal"
 	"github.com/pion/rtcp"
 	_ "github.com/pion/rtp"
-	"github.com/pion/webrtc"
-	"github.com/pion/webrtc/pkg/media"
-	"github.com/pion/webrtc/pkg/media/ivfwriter"
-	"github.com/pion/webrtc/pkg/media/oggwriter"
-	"github.com/pion/webrtc/pkg/media/h264writer"
+	"github.com/pion/webrtc/v2"
+	"github.com/pion/webrtc/v2/pkg/media"
+	"github.com/pion/webrtc/v2/pkg/media/ivfwriter"
+	"github.com/pion/webrtc/v2/pkg/media/oggwriter"
+	"github.com/pion/webrtc/v2/pkg/media/h264writer"
 	"github.com/q191201771/lal/pkg/rtmp"
 )
 
