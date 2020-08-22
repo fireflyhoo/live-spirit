@@ -14,9 +14,9 @@ import (
 	_ "github.com/pion/rtp"
 	"github.com/pion/webrtc/v2"
 	"github.com/pion/webrtc/v2/pkg/media"
+	"github.com/pion/webrtc/v2/pkg/media/h264writer"
 	"github.com/pion/webrtc/v2/pkg/media/ivfwriter"
 	"github.com/pion/webrtc/v2/pkg/media/oggwriter"
-	"github.com/pion/webrtc/v2/pkg/media/h264writer"
 	"github.com/q191201771/lal/pkg/rtmp"
 )
 
@@ -87,7 +87,7 @@ func getWebrtcOfferAnswer(offers string) string {
 	if err != nil {
 		panic(err)
 	}
-	h246File, err  := h264writer.New("./yy" + strconv.Itoa(i) + "h246.flv")
+	h246File, err := h264writer.New("./yy" + strconv.Itoa(i) + "h246.flv")
 
 	//webrtc 每一道流都会触发一次回调
 	peerConnection.OnTrack(func(track *webrtc.Track, receiver *webrtc.RTPReceiver) {
@@ -113,7 +113,7 @@ func getWebrtcOfferAnswer(offers string) string {
 		} else if codec.Name == webrtc.H264 {
 			fmt.Println("H264:--->")
 			//sendH264ToRtmp(track)
-			saveToDisk(h246File,track)
+			saveToDisk(h246File, track)
 		}
 	})
 
